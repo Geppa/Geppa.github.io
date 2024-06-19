@@ -1,6 +1,6 @@
 ---
 layout: work
-title: Work
+title: Publications
 slug: /work
 items:
   - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
