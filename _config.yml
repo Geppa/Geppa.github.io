@@ -22,8 +22,7 @@ footer:
   contact:
     - type: email
       name: Email
-      value: |
-        asdjklfgh97@khu.ac.kr
+      value: "asdjklfgh97@khu.ac.kr"
     # - type: wechat
     #   value: YourWeChatUsername
     #   link: "#"
