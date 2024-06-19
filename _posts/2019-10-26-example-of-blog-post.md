@@ -3,7 +3,7 @@ layout: post
 title:  "CVPR2024 Attendance"
 date:   2024-06-17 10:00:40
 blurb: "A look at an CVPR 2024 Attendance"
-og_image: /assets/img/content/post-example/Banner.jpg
+og_image: /assets/img/content/cvpr2024/IMG_4603.jpg
 ---
 
 <img src="{{ "/assets/img/content/cvpr2024/IMG_4603.jpg" | absolute_url }}" alt="poster img" class="post-pic"/>
