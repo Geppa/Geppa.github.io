@@ -18,6 +18,6 @@ items:
     E Cho, M Kim, HI Kim, J Moon, ST Kim
     Image and Vision Computing, 2023
 ---
-
+Publication
 <br />
 <br />
