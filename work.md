@@ -8,7 +8,7 @@ items:
       src: /assets/img/work/cm2.png
       alt: cm2
     description: |  
-       **Minkuk Kim**, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
+       <strong>Minkuk Kim</strong>, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
        IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024.
   - title: Retrieval-Augmented Natural Language Reasoning for Explainable Visual Question Answering
     image:
