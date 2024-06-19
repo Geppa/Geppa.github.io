@@ -15,7 +15,10 @@
               />
 
               {% if contact.type == "email" %}
-                {% if contact.cloak != false %}
+                <a href="{% if contact.url %}{{ contact.url }}{% else %}mailto:{{ contact.value }}{% endif %}">
+                  {{ contact.value }}
+                </a>
+                <!-- {% if contact.cloak != false %}
                   {% assign email_parts = contact.value | split: "@" %}
                   {% assign user = email_parts[0] %}
                   {% assign domain = email_parts[1] | split: "." %}
@@ -46,7 +49,7 @@
                   {% else %}
                     {{ contact.name }}
                   {% endif %}
-                </a>
+                </a> -->
               {% endif %}
             </div>
 
