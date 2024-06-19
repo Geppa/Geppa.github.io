@@ -27,3 +27,12 @@ profile_picture:
   <br><br>
   My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively.
 </p>
+
+<p style="font-size: 18px;">
+  <strong>Recent News</strong><br>
+</p>
+<p>
+Jun. 2024 One paper got accepted to ICIP Workshop 2024!
+Feb. 2024 One paper on Vision-Language Models got accepted to CVPR 2024!
+Nov. 2023 One paper got accepted to Image and Vision Computing!
+<p>
