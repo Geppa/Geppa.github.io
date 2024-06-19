@@ -11,7 +11,7 @@ profile_picture:
   Master Course Student <br>at <a href="http://ailab.khu.ac.kr/" target="_blank">Augmented Intelligence(AI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a> <br>contact with <strong>asdjklfgh97 at khu.ac.kr </strong>
 </p>
 <p>
-  <a href="/assets/pdf/CV_MinKukKim.pdf" target="_blank">CV</a> / <a href="https://github.com/Geppa">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US" target="_blank">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko" target="_blank">Google Scholar</a><br>
+  <a href="/assets/pdf/CV_MinKukKim.pdf" target="_blank">CV</a> / <a href="https://github.com/Geppa" target="_blank">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US" target="_blank">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko" target="_blank">Google Scholar</a><br>
 </p>
 <p>
   <strong>I am finding new job for AI research field. <br> Please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.</strong><br>
