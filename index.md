@@ -17,5 +17,5 @@ profile_picture:
 </p>
 
 <p>
-  I am finding new job for AI research field. <br> Please contact me with Email **"asdjklfgh97@khu.ac.kr"**.<br>
+  I am finding new job for AI research field. <br> Please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.<br>
 </p>
