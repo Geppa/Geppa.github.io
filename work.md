@@ -1,6 +1,6 @@
 ---
 layout: work
-title: Publications
+title: Work
 slug: /work
 items:
   - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
@@ -18,6 +18,6 @@ items:
     E Cho, M Kim, HI Kim, J Moon, ST Kim
     Image and Vision Computing, 2023
 ---
-Publication
+Publication2
 <br />
 <br />
