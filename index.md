@@ -6,16 +6,15 @@ profile_picture:
 ---
 
 <p>
-  Master Course Student <br>at <a href="http://ailab.khu.ac.kr/">Augmented Intelligence(AI) Laboratory</a><br>from Kyung Hee University
+  Master Course Student <br>at <a href="http://ailab.khu.ac.kr/">Augmented Intelligence(AI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a>
 </p>
-
 <br>
 <p>
   <strong>Info</strong><br>
   <a href="/assets/pdf/CV_MinKukKim.pdf">CV</a> / <a href="https://github.com/Geppa">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko">Google Scholar</a><br>
 </p>
 <p>
-  I am finding new job for AI research field. <br> Please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.<br>
+  <strong>I am finding new job for AI research field. <br> Please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.</strong><br>
 </p>
 <br>
 <p>
