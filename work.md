@@ -19,7 +19,7 @@ items:
       International Conference
        <br>Su Hyeon Kim, <strong>Minkuk Kim</strong>, Hyeon Bae Kim, Seong Tae Kim.  
        <br>IEEE International Conference on Image Processing Workshop, 2024.
-  - title: Exploiting recollection effects for memory-based video object segmentationㅤㅤㅤ
+  - title: Exploiting recollection effects for memory-based video object segmentationㅤㅤ
     image:
       src: /assets/img/work/efficient.png
       alt: efficient
