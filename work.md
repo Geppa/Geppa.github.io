@@ -1,20 +1,23 @@
 ---
 layout: work
-title: Work
+title: Publications
 slug: /work
 items:
-  - title: My Interest 1
+  - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
     image:
-      src: /assets/img/work/water.png
-      alt: water
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  - title: My Interest 2
+      src: /assets/img/work/cm2.png
+      alt: cm2
+    description: 
+    M Kim, HB Kim, J Moon, J Choi, ST Kim
+    IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024
+  - title: Exploiting recollection effects for memory-based video object segmentation
     image:
-      src: /assets/img/work/sand.png
-      alt: sand
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      src: /assets/img/work/efficient.png
+      alt: efficient
+    description: 
+    E Cho, M Kim, HI Kim, J Moon, ST Kim
+    Image and Vision Computing, 2023
 ---
 
-This is an example of a "Work" page, displaying your work, your interests, your projects.
 <br />
 <br />
