@@ -8,7 +8,7 @@ profile_picture:
   <strong>Info</strong><br>
 </p>
 <p>
-  Master Course Student <br>at <a href="http://ailab.khu.ac.kr/">Augmented Intelligence(AI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a>
+  Master Course Student <br>at <a href="http://ailab.khu.ac.kr/">Augmented Intelligence(AI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a> <br> with asdjklfgh97 at khu.ac.kr
 </p>
 <p>
   <a href="/assets/pdf/CV_MinKukKim.pdf">CV</a> / <a href="https://github.com/Geppa">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko">Google Scholar</a><br>
