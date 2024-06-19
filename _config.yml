@@ -18,11 +18,12 @@ header:
     - name: Blog
 
 footer:
-  show_powered_by: true
+  show_powered_by: false
   contact:
     - type: email
       name: Email
-      value: asdjklfgh97@khu.ac.kr
+      value: |
+        asdjklfgh97@khu.ac.kr
     # - type: wechat
     #   value: YourWeChatUsername
     #   link: "#"
