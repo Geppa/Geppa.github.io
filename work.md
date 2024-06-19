@@ -11,7 +11,7 @@ items:
        Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.
 
        IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024.
-  - title: Exploiting recollection effects for memory-based video object segmentation
+  - title: Exploiting recollection effects for memory-based video object segmentation   
     image:
       src: /assets/img/work/efficient.png
       alt: efficient
