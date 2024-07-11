@@ -14,7 +14,7 @@ profile_picture:
   <a href="/assets/pdf/CV_MinKukKim.pdf" target="_blank">CV</a> / <a href="https://github.com/Geppa" target="_blank">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US" target="_blank">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko" target="_blank">Google Scholar</a><br>
 </p>
 <p>
-  <strong>For any suggestion, <br> please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.</strong><br>
+  <strong>For any suggestion, please contact me with <a href="mailto:asdjklfgh97@khu.ac.kr">Email</a>.</strong><br>
 </p>
 <br>
 <p style="font-size: 18px;">
