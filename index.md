@@ -32,6 +32,7 @@ profile_picture:
   <strong>Recent News</strong><br>
 </p>
 <p>
+Aug. 2024 Completed MS program and start as PhD students!
 Jun. 2024 One paper got accepted to ICIP Workshop 2024!<br>
 Feb. 2024 One paper on Vision-Language Models got accepted to CVPR 2024!<br>
 Nov. 2023 One paper got accepted to Image and Vision Computing!<br>
