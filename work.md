@@ -3,6 +3,14 @@ layout: work
 title: Publications
 slug: /work
 items:
+  - title: HiCM<sup>2</sup>: Hierarchical Compact Memory Modeling for Dense Video Captioning
+    image:
+      src: /assets/img/work/HICM2.png
+      alt: hicm2
+    description: |  
+      International Conference
+       <br><strong>Minkuk Kim</strong>, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
+       <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024.
   - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
     image:
       src: /assets/img/work/cm2.png
