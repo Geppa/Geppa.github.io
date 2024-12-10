@@ -10,7 +10,7 @@ items:
     description: |  
       International Conference
        <br><strong>Minkuk Kim</strong>, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
-       <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024.
+       <br>Proceedings of the AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>), 2025.
   - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
     image:
       src: /assets/img/work/cm2.png
