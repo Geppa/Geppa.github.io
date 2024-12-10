@@ -3,15 +3,15 @@ layout: work
 title: Publications
 slug: /work
 items:
-  - title: "HiCM<sup>2</sup> : Hierarchical Compact Memory Modeling for Dense Video Captioning"
+  - title: HiCM<sup>2</sup> : Hierarchical Compact Memory Modeling for Dense Video Captioning
     image:
-      src: /assets/img/work/HICM2.png
+      src: /assets/img/work/HiCM2.png
       alt: hicm2
     description: |  
       International Conference
        <br><strong>Minkuk Kim</strong>, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
        <br>Proceedings of the AAAI Conference on Artificial Intelligence (<strong>AAAI</strong>), 2025.
-  - title: "Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval"
+  - title: Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval
     image:
       src: /assets/img/work/cm2.png
       alt: cm2
@@ -19,7 +19,7 @@ items:
       International Conference
        <br><strong>Minkuk Kim</strong>, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim.  
        <br>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2024.
-  - title: "Retrieval-Augmented Natural Language Reasoning for Explainable Visual Question Answering"
+  - title: Retrieval-Augmented Natural Language Reasoning for Explainable Visual Question Answering
     image:
       src: /assets/img/work/ReRe.png
       alt: ReRe
@@ -27,7 +27,7 @@ items:
       International Conference
        <br>Su Hyeon Kim, <strong>Minkuk Kim</strong>, Hyeon Bae Kim, Seong Tae Kim.  
        <br>IEEE International Conference on Image Processing Workshop, 2024.
-  - title: "Exploiting recollection effects for memory-based video object segmentation"ㅤ
+  - title: Exploiting recollection effects for memory-based video object segmentation
     image:
       src: /assets/img/work/efficient.png
       alt: efficient
