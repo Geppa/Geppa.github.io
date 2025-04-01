@@ -21,10 +21,18 @@ profile_picture:
   <strong>Short Bio</strong><br>
 </p>
 <p>
-  My name is Minkuk Kim, and I am currently an Ph.D student at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>'s Department of Artificial Intelligence, where I am part of the <a href="http://ailab.khu.ac.kr/" target="_blank">Augmented Intelligence(AI) Laboratory</a>. My academic journey, under the guidance of Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a>, has been deeply rooted in the realms of computer vision and natural language processing, with a strong focus on multi-modal AI. My research interests are particularly concentrated on Multi-modal AI, Memory Augmented AI. In detail, Dense Video Captioning, Visual Question Answering and Video Processing.
+  My name is Minkuk Kim, and I am currently a Ph.D. student at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>'s Department of Artificial Intelligence, where I am part of the <a href="http://amilab.khu.ac.kr/" target="_blank">Augmented Intelligence (AMI) Laboratory</a>. Under the supervision of Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a>, my research lies at the intersection of computer vision and natural language processing, with a particular focus on multi-modal learning and memory-augmented reasoning.
+
   <br><br>
-  Throughout my academic career, I have been involved in several significant research projects. Notably, my work on dense video captioning has led to the development of a model incorporating cross-modal memory retrieval, which was presented at CVPR 2024. Additionally, my research on memory-based video object segmentation has been published in the Image and Vision Computing journal. I am also actively engaged in visual question answering, exploring retrieval-augmented natural language reasoning.
+
+  My recent work has explored how external memory and cross-modal retrieval can enhance dense video captioning. At CVPR 2024, I presented a novel framework that retrieves relevant textual cues from memory to improve both event localization and caption generation in untrimmed videos. At AAAI 2025, I further introduced a hierarchical compact memory structure inspired by human cognition, which organizes memory information across multiple levels of abstraction. This approach enables both improved semantic recall and efficient retrieval in long and complex video contexts. Through these studies, I aim to bridge episodic memory modeling with multi-modal sequence understanding in video-language tasks.
+
   <br><br>
+
+  In the short term, I am particularly interested in advancing multi-modal AI systems to handle long-form, real-world video content—such as hour-long narratives—by integrating structured memory mechanisms with scalable temporal reasoning.
+
+  <br><br>
+
   My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively.
 </p>
 <br>
