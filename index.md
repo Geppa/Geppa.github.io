@@ -21,20 +21,31 @@ profile_picture:
   <strong>Short Bio</strong><br>
 </p>
 <p>
-  My name is Minkuk Kim, and I am currently a Ph.D. student at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>'s Department of Artificial Intelligence, where I am part of the <a href="http://amilab.khu.ac.kr/" target="_blank">Augmented Intelligence (AMI) Laboratory</a>. Under the supervision of Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a>, my research lies at the intersection of computer vision and natural language processing, with a particular focus on multi-modal learning and memory-augmented reasoning.
+  <!-- My name is Minkuk Kim, and I am currently a Ph.D. student at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>'s Department of Artificial Intelligence, where I am part of the <a href="http://amilab.khu.ac.kr/" target="_blank">Augmented Intelligence (AMI) Laboratory</a>. Under the supervision of Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a>, my research lies at the intersection of computer vision and natural language processing, with a particular focus on multi-modal learning and memory-augmented reasoning. -->
+
+  <!-- <br><br> -->
+
+  <!-- My recent work has explored how external memory and cross-modal retrieval can enhance dense video captioning. At CVPR 2024, I presented a novel framework that retrieves relevant textual cues from memory to improve both event localization and caption generation in untrimmed videos. At AAAI 2025, I further introduced a hierarchical compact memory structure inspired by human cognition, which organizes memory information across multiple levels of abstraction. This approach enables both improved semantic recall and efficient retrieval in long and complex video contexts. Through these studies, I aim to bridge episodic memory modeling with multi-modal sequence understanding in video-language tasks. -->
+
+  <!-- <br><br> -->
+
+  <!-- In the short term, I am particularly interested in advancing multi-modal AI systems to handle long-form, real-world video content—such as hour-long narratives—by integrating structured memory mechanisms with scalable temporal reasoning. -->
+
+  <!-- <br><br> -->
+
+  <!-- My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively. -->
+  I am a Ph.D. student in Artificial Intelligence at Kyung Hee University, advised by Prof. Seong-Tae Kim in the Augmented Intelligence Laboratory. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
 
   <br><br>
 
-  My recent work has explored how external memory and cross-modal retrieval can enhance dense video captioning. At CVPR 2024, I presented a novel framework that retrieves relevant textual cues from memory to improve both event localization and caption generation in untrimmed videos. At AAAI 2025, I further introduced a hierarchical compact memory structure inspired by human cognition, which organizes memory information across multiple levels of abstraction. This approach enables both improved semantic recall and efficient retrieval in long and complex video contexts. Through these studies, I aim to bridge episodic memory modeling with multi-modal sequence understanding in video-language tasks.
+  A central theme of my work is memory-augmented video understanding: how models can retain, structure, and retrieve visual evidence over long temporal contexts. I study this problem through tasks such as dense video captioning and video question answering, where models need to localize relevant events and reason over temporally distributed information.
 
   <br><br>
 
-  In the short term, I am particularly interested in advancing multi-modal AI systems to handle long-form, real-world video content—such as hour-long narratives—by integrating structured memory mechanisms with scalable temporal reasoning.
+  More broadly, I am interested in building video AI systems that are grounded in interpretable evidence and understandable to humans. Looking ahead, I hope to extend video understanding toward more realistic and interactive settings, such as egocentric video and embodied/VLA scenarios, where perception can eventually support action.
 
-  <br><br>
-
-  My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively.
 </p>
+
 <br>
 <p style="font-size: 18px;">
   <strong>Recent News</strong><br>
