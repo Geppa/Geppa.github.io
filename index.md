@@ -34,7 +34,7 @@ profile_picture:
   <!-- <br><br> -->
 
   <!-- My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively. -->
-  I am a Ph.D. student in Artificial Intelligence at Kyung Hee University, advised by Prof. Seong-Tae Kim in the Augmented Intelligence Laboratory. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
+  I am a Ph.D. student in Artificial Intelligence at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>, advised by Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a> in the <a href="http://amilab.khu.ac.kr/" target="_blank">Augmented Intelligence (AMI) Laboratory</a>. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
 
   <br><br>
 
