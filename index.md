@@ -8,7 +8,7 @@ profile_picture:
   <strong>Info</strong><br>
 </p>
 <p>
-  Ph.D Student <br>at <a href="http://ailab.khu.ac.kr/" target="_blank">Augmented Intelligence(AI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a> <br>contact with <strong>asdjklfgh97 at khu.ac.kr </strong>
+  Ph.D Student <br>at <a href="http://amilab.khu.ac.kr/" target="_blank">AugMented Intelligence(AMI) Laboratory</a><br>from <a href="https://khu.ac.kr/">Kyung Hee University</a> <br>contact with <strong>asdjklfgh97 at khu.ac.kr </strong>
 </p>
 <p>
   <a href="/assets/pdf/CV_MinKukKim.pdf" target="_blank">CV</a> / <a href="https://github.com/Geppa" target="_blank">Github</a> / <a href="https://www.linkedin.com/in/minkuk-kim-71b5482bb/?locale=en_US" target="_blank">LinkedIn</a> / <a href="https://scholar.google.com/citations?user=omTinbUAAAAJ&hl=ko" target="_blank">Google Scholar</a><br>
@@ -34,7 +34,7 @@ profile_picture:
   <!-- <br><br> -->
 
   <!-- My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively. -->
-  I am a Ph.D. student in Artificial Intelligence at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>, advised by Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a> in the <a href="http://amilab.khu.ac.kr/" target="_blank">Augmented Intelligence (AMI) Laboratory</a>. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
+  I am a Ph.D. student in Artificial Intelligence at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>, advised by Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a> in the <a href="http://amilab.khu.ac.kr/" target="_blank">AugMented Intelligence (AMI) Laboratory</a>. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
 
   <br><br>
 
@@ -51,6 +51,8 @@ profile_picture:
   <strong>Recent News</strong><br>
 </p>
 <p>
+Sep. 2026 One paper on Streaming Video Understanding got accepted to NeurIPS 2026!<br>
+Jun. 2026 One paper on Long Video Understanding got accepted to ECCV 2026!<br>
 Dec. 2024 One paper on Vision-Language Models got accepted to AAAI 2025!<br>
 Aug. 2024 Completed my MS program and start as PhD student!<br>
 Jun. 2024 One paper got accepted to ICIP Workshop 2024!<br>
