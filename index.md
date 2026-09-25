@@ -34,7 +34,7 @@ profile_picture:
   <!-- <br><br> -->
 
   <!-- My goal is to continue advancing the field of AI by developing innovative solutions that bridge the gap between visual and textual data, ultimately contributing to the creation of intelligent systems that understand and interact with the world more naturally and effectively. -->
-  I am a Ph.D. student in Artificial Intelligence at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>, advised by Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a> in the <a href="http://amilab.khu.ac.kr/" target="_blank">AugMented Intelligence (AMI) Laboratory</a>. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
+  I am a Ph.D. student in Artificial Intelligence at <a href="https://khu.ac.kr/" target="_blank">Kyung Hee University</a>, advised by Prof. <a href="https://sites.google.com/site/sseongtaekim/home?authuser=0" target="_blank">Seong-Tae Kim</a> in the <a href="http://amilab.khu.ac.kr/" target="_blank">AugMented Intelligence (AMI) Laboratory</a>. Since September 2026, I have been a visiting researcher at the University of Illinois Urbana-Champaign (UIUC), in Prof. <a href="https://rehg.org/" target="_blank">James M. Rehg</a>'s lab, working closely with Dr. <a href="https://jhkim0911.github.io/" target="_blank">Junho Kim</a>. My research focuses on video-language understanding, with a particular interest in long-form and streaming videos that involve extended temporal contexts.
 
   <br><br>
 
@@ -51,6 +51,7 @@ profile_picture:
   <strong>Recent News</strong><br>
 </p>
 <p>
+Sep. 2026 Started a 6 months visiting research stay at UIUC!<br>
 Sep. 2026 One paper on Streaming Video Understanding got accepted to NeurIPS 2026!<br>
 Jun. 2026 One paper on Long Video Understanding got accepted to ECCV 2026!<br>
 Dec. 2024 One paper on Vision-Language Models got accepted to AAAI 2025!<br>
