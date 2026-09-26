@@ -14,7 +14,7 @@ index.html               the page (Liquid templates over the _data files)
 assets/css/main.css      styling; colors and fonts are tokens at the top
 assets/js/main.js        figure prev/next, lightbox, optional GIF-on-hover
 assets/img/pubs/         figure images (WebP, max 1600 px wide)
-assets/img/profile-pic.jpg   portrait (4:5 crop, 960 px wide)
+assets/img/portrait-2026.jpg portrait (4:5 crop, 960 px wide)
 assets/img/favicon.svg
 assets/pdf/CV_MinKukKim.pdf
 ```
@@ -25,6 +25,8 @@ assets/pdf/CV_MinKukKim.pdf
 - New paper: copy a block in `_data/publications.yml`, drop its figures into `assets/img/pubs/`.
   The first figure is the teaser; visitors flip through the rest with the arrows and click to enlarge.
   Leave a link `url: ""` to show it as "(soon)".
+  `blurb` is the one-line description under the title (wrap the hook in `<em>`);
+  author markers go right after the name (`Seong Tae Kim*`, `Suyong Yun†`), legend text is `pub_legend` in `profile.yml`.
 - "Now" line: `now:` in `_data/profile.yml`. Set it to `""` to hide it.
 - Accent color: `--accent` in `assets/css/main.css`.
 

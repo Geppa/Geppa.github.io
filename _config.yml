@@ -5,7 +5,7 @@ baseurl: ""
 lang: en
 
 # Used for the link preview image (Open Graph / Twitter card). Absolute path on this site.
-og_image: /assets/img/profile-pic.jpg
+og_image: /assets/img/portrait-2026.jpg
 
 exclude:
   - README.md

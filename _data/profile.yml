@@ -6,7 +6,7 @@ me: Minkuk Kim
 
 role: Ph.D. student in Artificial Intelligence · Kyung Hee University
 
-photo: /assets/img/profile-pic.jpg
+photo: /assets/img/portrait-2026.jpg
 photo_alt: Minkuk Kim
 
 # One line about what you are doing right now. HTML allowed. Leave empty to hide.
@@ -28,6 +28,9 @@ links:
     url: https://www.linkedin.com/in/minkuk-kim-71b5482bb/
 
 scholar: https://scholar.google.com/citations?user=omTinbUAAAAJ
+
+# Legend for the author markers used in publications.yml. HTML allowed. Empty to hide.
+pub_legend: "<sup>*</sup> Corresponding author &nbsp;&middot;&nbsp; <sup>†</sup> Equal contribution"
 
 # Paragraphs. HTML allowed.
 bio:

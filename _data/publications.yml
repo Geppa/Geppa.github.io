@@ -1,7 +1,10 @@
 # Newest first. To add a paper, copy one block and edit it.
 #
 #   id        short slug, used as the anchor (#timetraveler) and for figure file names
-#   authors   list, in order; the name matching profile.me is emphasized automatically
+#   authors   list, in order; the name matching profile.me is emphasized automatically.
+#             Put a marker right after a name: * (corresponding) or † (equal contribution).
+#             The legend under the list is `pub_legend` in profile.yml.
+#   blurb     one line under the title, in your own words. HTML allowed; wrap the hook in <em>.
 #   venue     full venue name, as it should read on the page
 #   links     label + url; leave url empty to show the label greyed out as "soon"
 #   figures   list of images, first one is the teaser; src is the still image,
@@ -10,7 +13,11 @@
 
 - id: timetraveler
   title: "TimeTraveler: Temporal Strategy Planning with Time Dictionary for Streaming Video Understanding"
-  authors: [Minkuk Kim, Junho Kim, Seong Tae Kim]
+  authors: [Minkuk Kim, Junho Kim*, Seong Tae Kim*]
+  blurb: >-
+    <em>Look back, look now, or wait.</em> The stream is kept as structured captions rather than
+    compressed features, so long horizons lose no fine detail; an 8-bit captioner and a small
+    retrieval budget keep every answer under a second at 1 fps.
   venue: Neural Information Processing Systems (NeurIPS), 2026
   links:
     - {label: Paper, url: ""}
@@ -21,7 +28,11 @@
 
 - id: request
   title: "ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA"
-  authors: [Minkuk Kim, Suyong Yun, Young Tae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  authors: [Minkuk Kim†, Suyong Yun†, Young Tae Kim, Jinyoung Moon, Jinwoo Choi*, Seong Tae Kim*]
+  blurb: >-
+    <em>Answer. Doubt. Look again.</em> The model answers from its first evidence and, only when
+    uncertainty remains, goes back for the frames the question actually needs. Less pipeline,
+    more agent.
   venue: European Conference on Computer Vision (ECCV), 2026
   links:
     - {label: arXiv, url: "https://arxiv.org/abs/2607.01737"}
@@ -36,7 +47,12 @@
 
 - id: hicm2
   title: "HiCM²: Hierarchical Compact Memory Modeling for Dense Video Captioning"
-  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi*, Seong Tae Kim*]
+  blurb: >-
+    <em>Memory in layers, the way people keep it.</em> Captions are clustered and summarized into
+    low, middle and high levels of abstraction, so a long video is recalled coarse-to-fine instead
+    of searched flat. Compact, hierarchical memory of the kind long-horizon agents need, worked out
+    on dense video captioning.
   venue: AAAI Conference on Artificial Intelligence (AAAI), 2025
   links:
     - {label: arXiv, url: "https://arxiv.org/abs/2412.14585"}
@@ -50,7 +66,11 @@
 
 - id: cm2
   title: "Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval"
-  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi*, Seong Tae Kim*]
+  blurb: >-
+    <em>Recall before you describe.</em> An external memory of sentences is retrieved against what
+    the model sees, and the recalled cues guide both where an event is and how to say it.
+    Retrieval-augmented generation, for video: where this line of work began.
   venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024
   links:
     - {label: arXiv, url: "https://arxiv.org/abs/2404.07610"}
