@@ -1,0 +1,51 @@
+# Everything on the page that is about you. Edit here, not in index.html.
+
+name: Minkuk Kim
+# Your name as it appears in author lists; it gets emphasized in publications.
+me: Minkuk Kim
+
+role: Ph.D. student in Artificial Intelligence · Kyung Hee University
+
+photo: /assets/img/profile-pic.jpg
+photo_alt: Minkuk Kim
+
+# One line about what you are doing right now. HTML allowed. Leave empty to hide.
+now: >-
+  Visiting researcher at UIUC, Prof. <a href="https://rehg.org/">James M. Rehg</a>'s lab,
+  working closely with Dr. <a href="https://jhkim0911.github.io/">Junho Kim</a>
+  · Sept 2026 – Mar 2027
+
+links:
+  - label: Email
+    url: mailto:asdjklfgh97@khu.ac.kr
+  - label: CV
+    url: /assets/pdf/CV_MinKukKim.pdf
+  - label: Scholar
+    url: https://scholar.google.com/citations?user=omTinbUAAAAJ
+  - label: GitHub
+    url: https://github.com/Geppa
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/minkuk-kim-71b5482bb/
+
+scholar: https://scholar.google.com/citations?user=omTinbUAAAAJ
+
+# Paragraphs. HTML allowed.
+bio:
+  - >-
+    I am a Ph.D. student in Artificial Intelligence at
+    <a href="https://khu.ac.kr/">Kyung Hee University</a>, advised by Prof.
+    <a href="https://sites.google.com/site/sseongtaekim/home">Seong-Tae Kim</a> in the
+    <a href="http://amilab.khu.ac.kr/">AugMented Intelligence (AMI) Laboratory</a>.
+    My research focuses on video-language understanding, with a particular interest in
+    long-form and streaming videos that involve extended temporal contexts.
+  - >-
+    A central theme of my work is memory-augmented video understanding: how models can
+    retain, structure, and retrieve visual evidence over long temporal contexts. I study
+    this problem through dense video captioning and video question answering, where models
+    need to localize relevant events and reason over temporally distributed information.
+  - >-
+    Looking ahead, I hope to extend video understanding toward more realistic and
+    interactive settings, such as egocentric video and embodied/VLA scenarios, where
+    perception can eventually support action.
+
+footer: Minkuk Kim · Kyung Hee University

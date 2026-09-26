@@ -1,0 +1,63 @@
+# Newest first. To add a paper, copy one block and edit it.
+#
+#   id        short slug, used as the anchor (#timetraveler) and for figure file names
+#   authors   list, in order; the name matching profile.me is emphasized automatically
+#   venue     full venue name, as it should read on the page
+#   links     label + url; leave url empty to show the label greyed out as "soon"
+#   figures   list of images, first one is the teaser; src is the still image,
+#             hover (optional) is a GIF shown while the mouse is over the figure
+#   fit       "contain" (default, whole figure on white) or "cover" (fills the frame)
+
+- id: timetraveler
+  title: "TimeTraveler: Temporal Strategy Planning with Time Dictionary for Streaming Video Understanding"
+  authors: [Minkuk Kim, Junho Kim, Seong Tae Kim]
+  venue: Neural Information Processing Systems (NeurIPS), 2026
+  links:
+    - {label: Paper, url: ""}
+    - {label: Code, url: ""}
+  figures:
+    - {src: /assets/img/pubs/timetraveler-1.webp, alt: "TimeTraveler: a question can point to past, current or future evidence in a video stream; existing memory-based systems only look back."}
+    - {src: /assets/img/pubs/timetraveler-2.webp, alt: "TimeTraveler overall framework: the Time Dictionary is built asynchronously from the stream and the Temporal Strategy Planner routes each question to past, current or future evidence."}
+
+- id: request
+  title: "ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA"
+  authors: [Minkuk Kim, Suyong Yun, Young Tae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  venue: European Conference on Computer Vision (ECCV), 2026
+  links:
+    - {label: arXiv, url: "https://arxiv.org/abs/2607.01737"}
+    - {label: Code, url: "https://github.com/ailab-kyunghee/ReQuest"}
+    - {label: Project page, url: "https://geppa.github.io/ReQuest"}
+  figures:
+    - {src: /assets/img/pubs/request-1.webp, alt: "ReQuest concept: uniform and similarity-based sampling miss the conclusive frame; re-thinking with question-understandable frame selection finds it."}
+    - {src: /assets/img/pubs/request-2.webp, alt: "ReQuest overall pipeline: first-thinking with sparse frames, re-thinking routing by uncertainty, then question-aware key-frame selection."}
+    - {src: /assets/img/pubs/request-3.webp, alt: "Pseudo-label generation for the frame selector from segment confidence scores."}
+    - {src: /assets/img/pubs/request-4.webp, alt: "Qualitative example: ReQuest selects the conclusive frames for a counting question."}
+    - {src: /assets/img/pubs/request-5.webp, alt: "Qualitative example: uniform and similarity sampling pick misleading frames; ReQuest picks the frames with the answer."}
+
+- id: hicm2
+  title: "HiCM²: Hierarchical Compact Memory Modeling for Dense Video Captioning"
+  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  venue: AAAI Conference on Artificial Intelligence (AAAI), 2025
+  links:
+    - {label: arXiv, url: "https://arxiv.org/abs/2412.14585"}
+    - {label: Code, url: "https://github.com/ailab-kyunghee/HiCM2-DVC"}
+  figures:
+    - {src: /assets/img/pubs/hicm2-1.webp, alt: "HiCM² motivation: human recall from memory versus model retrieval from a hierarchical memory."}
+    - {src: /assets/img/pubs/hicm2-2.webp, alt: "HiCM² overall architecture with hierarchical memory read, temporal and text encoders, and a text decoder."}
+    - {src: /assets/img/pubs/hicm2-3.webp, alt: "Hierarchical memory construction by clustering and LLM cluster summarization."}
+    - {src: /assets/img/pubs/hicm2-4.webp, alt: "Hierarchical memory read with top-k selection and hierarchy tracking."}
+    - {src: /assets/img/pubs/hicm2-5.webp, alt: "Qualitative example of hierarchically retrieved sentences and generated captions."}
+
+- id: cm2
+  title: "Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval"
+  authors: [Minkuk Kim, Hyeon Bae Kim, Jinyoung Moon, Jinwoo Choi, Seong Tae Kim]
+  venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024
+  links:
+    - {label: arXiv, url: "https://arxiv.org/abs/2404.07610"}
+    - {label: Code, url: "https://github.com/ailab-kyunghee/CM2_DVC"}
+  figures:
+    - {src: /assets/img/pubs/cm2-1.webp, alt: "CM² concept: the model queries an external memory bank and retrieves relevant sentences to caption the video."}
+    - {src: /assets/img/pubs/cm2-2.webp, alt: "CM² overall architecture with memory read and a versatile encoder-decoder."}
+    - {src: /assets/img/pubs/cm2-3.webp, alt: "Memory read: retrieval with temporal anchors and feature aggregation."}
+    - {src: /assets/img/pubs/cm2-4.webp, alt: "Versatile encoder and decoder with visual and textual cross-attention."}
+    - {src: /assets/img/pubs/cm2-5.webp, alt: "Qualitative example of retrieved sentences and generated captions."}

@@ -1,151 +1,49 @@
-# Bay
+# geppa.github.io
 
-[![Version](https://img.shields.io/gem/v/bay_jekyll_theme)](https://rubygems.org/gems/bay_jekyll_theme)
-[![Downloads](https://img.shields.io/gem/dt/bay_jekyll_theme)](https://rubygems.org/gems/bay_jekyll_theme)
+Single-page academic site. Plain Jekyll, no theme, no plugins, so GitHub Pages builds it as is.
 
-Bay is a simple theme for Jekyll. [[view live]](https://eliottvincent.github.io/bay)
+## Layout of the repo
 
-Inspired by [dangrover.com](http://dangrover.com/). Current theme used at [eliottvincent.com](http://eliottvincent.com/).
-
-![](/screenshot.png)
-
-### Installation
-
-
-The easiest solution is to [fork this repo](https://github.com/eliottvincent/bay/fork).
-If you want to start from a clean website, follow the steps below:
-
-Create a new Jekyll website:
 ```
-jekyll new mysite
-```
-
-Open `Gemfile` and replace the line:
-```
-gem "minima"
-```
-with:
-```
-gem "bay_jekyll_theme"
+_config.yml              site title, description (this is what link previews show), URL
+_data/profile.yml        name, role, "Now" line, links, bio paragraphs, footer
+_data/news.yml           news list, newest first
+_data/publications.yml   papers, newest first, with figure lists
+_layouts/default.html    <head>: meta / Open Graph tags, fonts, CSS
+index.html               the page (Liquid templates over the _data files)
+assets/css/main.css      styling; colors and fonts are tokens at the top
+assets/js/main.js        figure prev/next, lightbox, optional GIF-on-hover
+assets/img/pubs/         figure images (WebP, max 1600 px wide)
+assets/img/profile-pic.jpg   portrait (4:5 crop, 960 px wide)
+assets/img/favicon.svg
+assets/pdf/CV_MinKukKim.pdf
 ```
 
-Open `_config.yml` and replace the line:
+## Everyday edits
+
+- News: add a line at the top of `_data/news.yml`.
+- New paper: copy a block in `_data/publications.yml`, drop its figures into `assets/img/pubs/`.
+  The first figure is the teaser; visitors flip through the rest with the arrows and click to enlarge.
+  Leave a link `url: ""` to show it as "(soon)".
+- "Now" line: `now:` in `_data/profile.yml`. Set it to `""` to hide it.
+- Accent color: `--accent` in `assets/css/main.css`.
+
+## Figures
+
+Export figures as PDF, then rasterize to WebP (white background, max 1600 px wide), e.g.
+
 ```
-theme: minima
-```
-with:
-```
-theme: bay_jekyll_theme
-```
-or, for GitHub Pages:
-```
-remote_theme: eliottvincent/bay
+pdftoppm -png -r 200 -f 1 -l 1 figure.pdf tmp
+python3 -c "from PIL import Image; im=Image.open('tmp-1.png').convert('RGB'); w=1600; im=im.resize((w, round(im.height*w/im.width))) if im.width>w else im; im.save('assets/img/pubs/NAME-1.webp','WEBP',quality=86)"
 ```
 
-Finally, install the dependencies:
+A GIF teaser: keep the still as `src` and add `hover: /assets/img/pubs/NAME-1.gif` to that figure; it plays while the mouse is over the frame.
+
+## Local preview
+
 ```
 bundle install
-```
-
-and build the website!
-```
-jekyll serve
-```
-
-
-The website will look somewhat empty at first. That's normal. Follow the next instructions to complete the header and footer components, and the home and blog pages.
-
-### Header
-Open the `_config.yml` file and add the following:
-```yml
-header:
-  pages:
-    - name: Home
-      slug: /     # <-- index.md
-    - name: Blog  # <-- blog.md
-    - name: Whatever  # <-- whatever.md
-```
-Re-run `jekyll serve` to see the header updated.
-
-### Footer
-Open the `_config.yml` file and add the following:
-```yml
-footer:
-  show_powered_by: true
-  contact:
-    - type: email
-      name: Email
-      value: yourmail@domain.com
-    - type: wechat
-      value: YourWeChatUsername
-      link: "#"
-  follow:
-    - type: twitter
-      name: Twitter
-      link: http://twitter.com/YourTwitterUsername
-      username: "@YourTwitterUsername"
-    - type: facebook
-      name: Facebook
-      link: http://facebook.com/YourFacebookUsername
-    - type: linkedin
-      name: LinkedIn
-      link: http://linkedin.com/in/YourLinkedInUsername
-    - type: github
-      name: GitHub
-      link: http://github.com/YourGitHubUsername
-    - type: dribbble
-      name: Dribbble
-      link: https://dribbble.com/YourDribbbleUsername
-    - type: rss
-      name: RSS
-      link: /feed.xml
-```
-Re-run `jekyll serve` to see the footer updated.
-
-### Home page
-Create (or edit) the `index.markdown` file and add the following:
-```yml
----
-layout: home
-profile_picture:
-  src: /assets/img/profile-pic.jpg
-  alt: website picture
----
-
-<p>
-  Welcome to mysite!
-</p>
-```
-
-### Blog page
-Create `blog.markdown` file and add the following:
-```yml
----
-layout: blog
-title: Blog
-slug: /blog
----
-
-This is an example of a "Blog" page, displaying a list of posts.
-<br />
-```
-
-
-Your website is ready!
-
-
-### Development
-
-#### Run development instance (with hot-reload)
-```sh
 bundle exec jekyll serve
 ```
 
-#### Build and publish the gem
-```sh
-gem build bay_jekyll_theme.gemspec
-```
-
-```sh
-gem push bay_jekyll_theme-1.x.x.gem
-```
+`Gemfile` pins the same Jekyll that GitHub Pages runs.
