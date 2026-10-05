@@ -10,11 +10,13 @@ photo: /assets/img/portrait-2026.jpg
 photo_alt: Minkuk Kim
 
 # One line about what you are doing right now. HTML allowed. Leave empty to hide.
+# now: >-
+#   Visiting researcher at UIUC, Prof. <a href="https://rehg.org/">James M. Rehg</a>'s lab,
+#   working closely with Dr. <a href="https://jhkim0911.github.io/">Junho Kim</a>
+#   · Sept 2026 – Mar 2027
 now: >-
-  Visiting researcher at UIUC, Prof. <a href="https://rehg.org/">James M. Rehg</a>'s lab,
-  working closely with Dr. <a href="https://jhkim0911.github.io/">Junho Kim</a>
+  Visiting researcher at UIUC, Prof. <a href="https://rehg.org/">James M. Rehg</a>'s lab
   · Sept 2026 – Mar 2027
-
 links:
   - label: Email
     url: mailto:asdjklfgh97@khu.ac.kr
