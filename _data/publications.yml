@@ -20,8 +20,9 @@
     retrieval budget keep every answer under a second at 1 fps.
   venue: Neural Information Processing Systems (NeurIPS), 2026
   links:
-    - {label: Paper, url: ""}
-    - {label: Code, url: ""}
+    - {label: Paper, url: "https://geppa.github.io/TimeTraveler/static/pdf/TimeTraveler_NeurIPS2026.pdf"}
+    - {label: Code, url: "https://github.com/KHU-AMI/TimeTraveler"}
+    - {label: Project page, url: "https://geppa.github.io/TimeTraveler"}
   figures:
     - {src: /assets/img/pubs/timetraveler-1.webp, alt: "TimeTraveler: a question can point to past, current or future evidence in a video stream; existing memory-based systems only look back."}
     - {src: /assets/img/pubs/timetraveler-2.webp, alt: "TimeTraveler overall framework: the Time Dictionary is built asynchronously from the stream and the Temporal Strategy Planner routes each question to past, current or future evidence."}
