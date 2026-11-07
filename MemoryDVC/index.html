@@ -20,12 +20,13 @@
 <body>
 
 <nav class="nav">
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
   <div class="wrap nav-inner">
     <a class="wordmark duo-text" href="#top">CM² · HiCM²</a>
     <div class="nav-links">
       <a href="#series">Series</a>
-      <a href="#cm2" data-go="cm2">CM²</a>
-      <a href="#hicm2" data-go="hicm2">HiCM²</a>
+      <a href="#cm2" data-spy="cm2">CM²</a>
+      <a href="#hicm2" data-spy="hicm2">HiCM²</a>
       <a href="#bibtex">BibTeX</a>
     </div>
   </div>
@@ -62,15 +63,15 @@
       <p>Dense video captioning has to find every event in an untrimmed video and describe each one. Visual features alone carry little semantic content for that. Both papers take a cue from how people describe what they see: by recalling something similar they have seen before.</p>
     </div>
     <div class="series">
-      <button class="scard" type="button" data-go="cm2">
+      <a class="scard" href="#cm2">
         <div class="kick">CVPR 2024</div>
         <h3>CM²<small>flat memory</small></h3>
         <p>Every training caption becomes a memory entry. Each segment of the video retrieves its nearest sentences, which guide both where events are and how to describe them.</p>
         <div class="viz"><div class="dots" id="flatDots" aria-hidden="true"></div><div class="viz-note">One entry per caption; a segment pulls its nearest ones.</div></div>
-        <div class="go">Open CM²</div>
-      </button>
+        <div class="go">Read Chapter I</div>
+      </a>
       <span class="arrow" aria-hidden="true">→</span>
-      <button class="scard" type="button" data-go="hicm2">
+      <a class="scard" href="#hicm2">
         <div class="kick">AAAI 2025</div>
         <h3>HiCM²<small>hierarchical memory</small></h3>
         <p>Captions are clustered level by level and each cluster is summarized by an LLM into one sentence. Recall starts from the abstract top and narrows down.</p>
@@ -84,23 +85,19 @@
           </div>
           <div class="viz-note">YouCook2 memory, entries per level (bar length on a log scale).</div>
         </div>
-        <div class="go">Open HiCM²</div>
-      </button>
+        <div class="go">Read Chapter II</div>
+      </a>
     </div>
 
-    <div class="ptabs-wrap" id="papers">
-      <div class="ptabs" role="tablist" aria-label="Papers">
-        <button class="ptab" role="tab" id="tab-cm2" data-go="cm2" aria-controls="panel-cm2"><span class="pn">CM²</span><span class="pv">CVPR 2024</span></button>
-        <button class="ptab" role="tab" id="tab-hicm2" data-go="hicm2" aria-controls="panel-hicm2"><span class="pn">HiCM²</span><span class="pv">AAAI 2025</span></button>
-      </div>
-    </div>
   </section>
 
   <!-- ===================== CM² ===================== -->
-  <div class="panel" id="panel-cm2" role="tabpanel" aria-labelledby="tab-cm2">
+  <article class="chapter" id="cm2" aria-labelledby="cm2-title">
     <div class="wrap paper-head">
-      <h2 class="ptitle">Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval</h2>
-      <div class="pvenue">CVPR 2024</div>
+      <div class="ch-num" aria-hidden="true">I</div>
+      <div class="ch-kick">Chapter I · CVPR 2024</div>
+      <div class="ch-name">CM²</div>
+      <h2 class="ptitle" id="cm2-title">Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval</h2>
       <div class="btn-row">
         <a class="btn" href="https://arxiv.org/abs/2404.07610">📄 Paper</a>
         <a class="btn ghost" href="https://github.com/ailab-kyunghee/CM2_DVC">💻 Code</a>
@@ -210,13 +207,15 @@
         </div>
       </div>
     </section>
-  </div>
+  </article>
 
   <!-- ===================== HiCM² ===================== -->
-  <div class="panel" id="panel-hicm2" role="tabpanel" aria-labelledby="tab-hicm2" hidden>
+  <article class="chapter" id="hicm2" aria-labelledby="hicm2-title">
     <div class="wrap paper-head">
-      <h2 class="ptitle">HiCM²: Hierarchical Compact Memory Modeling for Dense Video Captioning</h2>
-      <div class="pvenue">AAAI 2025</div>
+      <div class="ch-num" aria-hidden="true">II</div>
+      <div class="ch-kick">Chapter II · AAAI 2025</div>
+      <div class="ch-name">HiCM²</div>
+      <h2 class="ptitle" id="hicm2-title">HiCM²: Hierarchical Compact Memory Modeling for Dense Video Captioning</h2>
       <div class="btn-row">
         <a class="btn" href="https://arxiv.org/abs/2412.14585">📄 Paper</a>
         <a class="btn ghost" href="https://github.com/ailab-kyunghee/HiCM2-DVC">💻 Code</a>
@@ -347,7 +346,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </article>
 
   <section id="bibtex" class="wrap">
     <h2>BibTeX</h2>
@@ -405,31 +404,25 @@
     $('flatDots').innerHTML = h;
   })();
 
-  /* ---------- paper tabs (hash: #cm2 / #hicm2) ---------- */
-  function showPaper(id, scroll) {
-    ['cm2', 'hicm2'].forEach(function (p) {
-      var on = p === id;
-      $('panel-' + p).hidden = !on;
-      $('tab-' + p).classList.toggle('active', on);
-      $('tab-' + p).setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    if (scroll) $('papers').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-  document.querySelectorAll('[data-go]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      var id = el.dataset.go;
-      history.replaceState(null, '', '#' + id);
-      showPaper(id, true);
-    });
-  });
-  function fromHash() {
-    var h = location.hash.replace('#', '');
-    if (h === 'cm2' || h === 'hicm2') { showPaper(h, false); setTimeout(function () { $('papers').scrollIntoView({ block: 'start' }); }, 30); }
-    else showPaper('cm2', false);
-  }
-  window.addEventListener('hashchange', fromHash);
-  fromHash();
+  /* ---------- chapters: scroll-spy in the nav + reading progress ---------- */
+  (function () {
+    var links = {};
+    document.querySelectorAll('[data-spy]').forEach(function (a) { links[a.dataset.spy] = a; });
+    var chapters = ['cm2', 'hicm2'].map(function (id) { return $(id); });
+    var bar = $('progressBar');
+    function update() {
+      var y = window.scrollY + window.innerHeight * 0.35, cur = null;
+      chapters.forEach(function (c) { if (c.offsetTop <= y) cur = c.id; });
+      var bib = $('bibtex');
+      if (bib && bib.offsetTop <= y) cur = null;
+      Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === cur); });
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
 
   /* ---------- demos ----------
      frames: the 7 frames of the paper's qualitative figure, in order.
