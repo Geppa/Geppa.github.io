@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ site.description }}">
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
@@ -27,6 +27,30 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css?v={{ site.time | date: '%s' }}">
 </head>
 <body>
+{% assign p = site.data.profile %}
+<header class="masthead">
+  <div class="wrap masthead-grid rise">
+    <nav class="tabs" aria-label="Pages">
+      <a class="tab{% if page.tab == 'bio' %} is-active{% endif %}" href="{{ site.baseurl }}/"{% if page.tab == 'bio' %} aria-current="page"{% endif %}>Bio</a>
+      <a class="tab{% if page.tab == 'projects' %} is-active{% endif %}" href="{{ site.baseurl }}/projects/"{% if page.tab == 'projects' %} aria-current="page"{% endif %}>Projects</a>
+    </nav>
+    <img class="portrait" src="{{ p.photo }}" alt="{{ p.photo_alt }}" width="240" height="300">
+    <div class="ident-block">
+      <div class="ident">
+        <span class="rule" aria-hidden="true"></span>
+        <h1 class="name">{{ p.name }}</h1>
+        <p class="role">{{ p.role }}</p>
+      </div>
+      {% if p.now and p.now != "" %}
+      <p class="now"><span class="now-label">Now</span><span class="now-text">{{ p.now }}</span></p>
+      {% endif %}
+      <nav class="links" aria-label="Links">
+        {% for l in p.links %}<a class="ul" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+      </nav>
+    </div>
+  </div>
+</header>
+
 {{ content }}
 <script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
 </body>

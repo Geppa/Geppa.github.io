@@ -1,0 +1,27 @@
+# Projects tab: project pages grouped by research thread, newest first.
+#   pub   id in publications.yml; its first figure is used as the thumbnail
+#   note  one line in your own words
+- id: streaming
+  title: Streaming video understanding
+  projects:
+    - name: TimeTraveler
+      pub: timetraveler
+      venue: NeurIPS 2026
+      url: https://geppa.github.io/TimeTraveler/
+      note: "Look back, look now, or wait: planning where the evidence for a question lives in a live stream."
+- id: long-form
+  title: Long-form video question answering
+  projects:
+    - name: ReQuest
+      pub: request
+      venue: ECCV 2026
+      url: https://geppa.github.io/ReQuest/
+      note: "Answer, doubt, look again: going back only for the frames a question actually needs."
+- id: dense-captioning
+  title: Memory-augmented dense video captioning
+  projects:
+    - name: CM² · HiCM²
+      pub: hicm2
+      venue: CVPR 2024 · AAAI 2025
+      url: https://geppa.github.io/MemoryDVC/
+      note: "Recalling past descriptions, then organizing that memory in layers, to find and caption events."

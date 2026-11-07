@@ -109,3 +109,15 @@
     }
   });
 })();
+
+/* Links open in a new tab, except moves between Bio and Projects and links within the page. */
+(function () {
+  'use strict';
+  document.querySelectorAll('a[href]').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (a.closest('.tabs') || a.classList.contains('next-card')) return;
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+})();

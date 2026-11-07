@@ -1,26 +1,8 @@
 ---
 layout: default
+tab: bio
 ---
 {% assign p = site.data.profile %}
-<header class="masthead">
-  <div class="wrap masthead-grid rise">
-    <img class="portrait" src="{{ p.photo }}" alt="{{ p.photo_alt }}" width="240" height="300">
-    <div class="ident-block">
-      <div class="ident">
-        <span class="rule" aria-hidden="true"></span>
-        <h1 class="name">{{ p.name }}</h1>
-        <p class="role">{{ p.role }}</p>
-      </div>
-      {% if p.now and p.now != "" %}
-      <p class="now"><span class="now-label">Now</span><span class="now-text">{{ p.now }}</span></p>
-      {% endif %}
-      <nav class="links" aria-label="Links">
-        {% for l in p.links %}<a class="ul" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
-      </nav>
-    </div>
-  </div>
-</header>
-
 <main class="wrap">
 
   <section class="sec rise d1" id="about">
@@ -72,6 +54,17 @@ layout: default
     <p class="pub-legend">{{ p.pub_legend }}</p>
     {% endif %}
   </section>
+
+
+  <a class="next-card rise d4" href="{{ site.baseurl }}/projects/">
+    <span class="next-text">
+      <span class="next-label">Next</span>
+      <span class="next-title">Projects</span>
+      <span class="next-sub">Demos, figures, and results for each paper, grouped by research thread.</span>
+    </span>
+    <span class="next-figs" aria-hidden="true">{% for t in site.data.projects %}{% for pr in t.projects %}{% assign pub = site.data.publications | where: "id", pr.pub | first %}<span class="next-fig"><img src="{{ pub.figures[0].src }}" alt="" loading="lazy"></span>{% endfor %}{% endfor %}</span>
+    <span class="next-go" aria-hidden="true">→</span>
+  </a>
 
   <footer class="foot rise d4">
     <span class="rule" aria-hidden="true"></span>

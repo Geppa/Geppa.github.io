@@ -58,6 +58,7 @@
   links:
     - {label: arXiv, url: "https://arxiv.org/abs/2412.14585"}
     - {label: Code, url: "https://github.com/ailab-kyunghee/HiCM2-DVC"}
+    - {label: Project page, url: "https://geppa.github.io/MemoryDVC/#hicm2"}
   figures:
     - {src: /assets/img/pubs/hicm2-1.webp, alt: "HiCM² motivation: human recall from memory versus model retrieval from a hierarchical memory."}
     - {src: /assets/img/pubs/hicm2-2.webp, alt: "HiCM² overall architecture with hierarchical memory read, temporal and text encoders, and a text decoder."}
@@ -76,6 +77,7 @@
   links:
     - {label: arXiv, url: "https://arxiv.org/abs/2404.07610"}
     - {label: Code, url: "https://github.com/ailab-kyunghee/CM2_DVC"}
+    - {label: Project page, url: "https://geppa.github.io/MemoryDVC/#cm2"}
   figures:
     - {src: /assets/img/pubs/cm2-1.webp, alt: "CM² concept: the model queries an external memory bank and retrieves relevant sentences to caption the video."}
     - {src: /assets/img/pubs/cm2-2.webp, alt: "CM² overall architecture with memory read and a versatile encoder-decoder."}

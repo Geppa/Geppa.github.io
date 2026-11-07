@@ -1,0 +1,35 @@
+---
+layout: default
+tab: projects
+title: Projects
+---
+{% assign p = site.data.profile %}
+<main class="wrap">
+  {% for t in site.data.projects %}
+  <section class="sec rise d{{ forloop.index }}" id="{{ t.id }}">
+    <h2 class="label">{{ t.title }}</h2>
+    <div class="projs">
+      {% for pr in t.projects %}
+      {% assign pub = site.data.publications | where: "id", pr.pub | first %}
+      <a class="proj" href="{{ pr.url }}">
+        <span class="proj-fig"><img src="{{ pub.figures[0].src }}" alt="{{ pub.figures[0].alt }}"></span>
+        <span class="proj-body">
+          <span class="proj-name">{{ pr.name }}</span>
+          <span class="proj-venue">{{ pr.venue }}</span>
+          <span class="proj-note">{{ pr.note }}</span>
+          <span class="proj-go">Project page</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <footer class="foot rise d4">
+    <span class="rule" aria-hidden="true"></span>
+    <div class="foot-row">
+      <span>{{ p.footer }}</span>
+      <span>Updated {{ site.time | date: "%B %Y" }}</span>
+    </div>
+  </footer>
+</main>

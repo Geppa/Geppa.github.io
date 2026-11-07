@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CM² · HiCM²: Memory-Augmented Dense Video Captioning</title>
+  <meta name="description" content="Project page for CM² (CVPR 2024) and HiCM² (AAAI 2025): dense video captioning that recalls sentences from an external memory, first flat and then hierarchical.">
+  <meta name="keywords" content="CM2, HiCM2, dense video captioning, memory retrieval, hierarchical memory, retrieval-augmented generation, CVPR 2024, AAAI 2025">
+  <meta property="og:title" content="CM² · HiCM²: Memory-Augmented Dense Video Captioning">
+  <meta property="og:description" content="Dense video captioning that recalls from memory: a flat sentence memory (CM², CVPR 2024) and a hierarchical compact memory (HiCM², AAAI 2025).">
+  <meta property="og:image" content="https://geppa.github.io/MemoryDVC/static/images/hicm2/concept.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎞️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="wordmark duo-text" href="#top">CM² · HiCM²</a>
+    <div class="nav-links">
+      <a href="#series">Series</a>
+      <a href="#cm2" data-go="cm2">CM²</a>
+      <a href="#hicm2" data-go="hicm2">HiCM²</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <span class="venue">CVPR 2024 · AAAI 2025</span>
+  <h1>
+    <span class="name duo-text">CM² · HiCM²</span>
+    <span class="title">Memory-Augmented Dense Video Captioning</span>
+  </h1>
+  <p class="subline">Two papers on giving a dense video captioner a memory to recall from. CM² retrieves sentences from a flat memory of training captions. HiCM² organizes that memory into a hierarchy of compact summaries and reads it from the top down.</p>
+
+  <div class="authors">
+    <div class="row">
+      <a href="https://www.linkedin.com/in/minkuk-kim/">Minkuk Kim</a><sup class="k">1</sup>,&nbsp;
+      Hyeon Bae Kim<sup class="k">1</sup>,&nbsp;
+      Jinyoung Moon<sup class="e">2</sup>,&nbsp;
+      <a href="https://www.linkedin.com/in/jinwoo-choi-36056795/">Jinwoo Choi</a><sup class="k">1</sup><sup>*</sup>,&nbsp;
+      <a href="https://www.linkedin.com/in/seong-tae-kim-b2b04086/">Seong Tae Kim</a><sup class="k">1</sup><sup>*</sup>
+    </div>
+    <div class="affils">
+      <span class="inst khu"><i class="dot"></i><sup class="k">1</sup>Kyung Hee University</span>
+      <span class="inst etri"><i class="dot"></i><sup class="e">2</sup><span class="long">Electronics and Telecommunications Research Institute&nbsp;</span>(ETRI)</span>
+    </div>
+    <div class="marks"><sup>*</sup>Corresponding authors</div>
+  </div>
+</header>
+
+<main>
+  <section id="series" class="wrap">
+    <h2>From a flat memory to a hierarchy</h2>
+    <div class="prose">
+      <p>Dense video captioning has to find every event in an untrimmed video and describe each one. Visual features alone carry little semantic content for that. Both papers take a cue from how people describe what they see: by recalling something similar they have seen before.</p>
+    </div>
+    <div class="series">
+      <button class="scard" type="button" data-go="cm2">
+        <div class="kick">CVPR 2024</div>
+        <h3>CM²<small>flat memory</small></h3>
+        <p>Every training caption becomes a memory entry. Each segment of the video retrieves its nearest sentences, which guide both where events are and how to describe them.</p>
+        <div class="viz"><div class="dots" id="flatDots" aria-hidden="true"></div><div class="viz-note">One entry per caption; a segment pulls its nearest ones.</div></div>
+        <div class="go">Open CM²</div>
+      </button>
+      <span class="arrow" aria-hidden="true">→</span>
+      <button class="scard" type="button" data-go="hicm2">
+        <div class="kick">AAAI 2025</div>
+        <h3>HiCM²<small>hierarchical memory</small></h3>
+        <p>Captions are clustered level by level and each cluster is summarized by an LLM into one sentence. Recall starts from the abstract top and narrows down.</p>
+        <div class="viz">
+          <div class="pyr" aria-label="YouCook2 hierarchical memory: 8, 68, 313 and 1,758 entries built from 10,337 captions">
+            <div class="lv"><span>High · L4</span><div class="bar" style="width:22.5%"><span>8</span></div></div>
+            <div class="lv"><span>Mid · L3</span><div class="bar" style="width:45.7%"><span>68</span></div></div>
+            <div class="lv"><span>Mid · L2</span><div class="bar" style="width:62.2%"><span>313</span></div></div>
+            <div class="lv"><span>Low · L1</span><div class="bar" style="width:80.8%"><span>1,758</span></div></div>
+            <div class="lv src"><span>Captions</span><div class="bar" style="width:100%"><span>10,337</span></div></div>
+          </div>
+          <div class="viz-note">YouCook2 memory, entries per level (bar length on a log scale).</div>
+        </div>
+        <div class="go">Open HiCM²</div>
+      </button>
+    </div>
+
+    <div class="ptabs-wrap" id="papers">
+      <div class="ptabs" role="tablist" aria-label="Papers">
+        <button class="ptab" role="tab" id="tab-cm2" data-go="cm2" aria-controls="panel-cm2"><span class="pn">CM²</span><span class="pv">CVPR 2024</span></button>
+        <button class="ptab" role="tab" id="tab-hicm2" data-go="hicm2" aria-controls="panel-hicm2"><span class="pn">HiCM²</span><span class="pv">AAAI 2025</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CM² ===================== -->
+  <div class="panel" id="panel-cm2" role="tabpanel" aria-labelledby="tab-cm2">
+    <div class="wrap paper-head">
+      <h2 class="ptitle">Do You Remember? Dense Video Captioning with Cross-Modal Memory Retrieval</h2>
+      <div class="pvenue">CVPR 2024</div>
+      <div class="btn-row">
+        <a class="btn" href="https://arxiv.org/abs/2404.07610">📄 Paper</a>
+        <a class="btn ghost" href="https://github.com/ailab-kyunghee/CM2_DVC">💻 Code</a>
+      </div>
+    </div>
+
+    <section class="wrap">
+      <h2>Overview</h2>
+      <div class="prose">
+        <p>CM² stores the training captions as an external memory. The input video is split into segment-level temporal anchors, and each anchor retrieves its most similar sentences through video-to-text matching. A versatile encoder processes the visual features and the retrieved text with shared weights, and the decoder reads them through separate visual and textual cross-attention to predict event boundaries and captions.</p>
+        <p>Without pretraining on extra videos, CM² reaches <b>33.01 CIDEr</b> on ActivityNet Captions, above Vid2Seq, which is pretrained on 15M videos.</p>
+      </div>
+      <figure>
+        <img src="static/images/cm2/concept.jpg" alt="CM² concept: like a person recalling relevant memories, the model searches an external memory bank for relevant sentences to describe and localize events in an untrimmed video.">
+        <figcaption><b>Recall, then describe.</b> CM² searches an external memory bank for clues relevant to each part of the video, and uses them to describe and localize events.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap">
+      <h2>See it in action</h2>
+      <div class="explorer" id="demo-cm2"></div>
+    </section>
+
+    <section class="wrap">
+      <h2>Method</h2>
+      <figure>
+        <img src="static/images/cm2/overall.jpg" alt="CM² overall architecture: a frozen CLIP image encoder, memory retrieval with temporal anchors, a versatile transformer encoder, and a decoder with visual and textual cross-attention that outputs start time, end time, and caption.">
+        <figcaption><b>Overall architecture.</b> Video features query the memory; retrieved text and visual features go through a shared encoder, and the decoder attends to both before predicting each event.</figcaption>
+      </figure>
+      <div class="fig-pair">
+        <figure>
+          <img src="static/images/cm2/memory_read.jpg" alt="Memory read module: temporal anchors are compared with the text features in memory, and the top-k retrieved features are aggregated per anchor.">
+          <figcaption><b>Memory read.</b> Segment-level anchors retrieve and aggregate their nearest text features.</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/cm2/encdec.jpg" alt="Versatile encoder-decoder: one weight-shared encoder for visual and text features, and a decoder with separate visual and textual cross-attention.">
+          <figcaption><b>Versatile encoder-decoder.</b> One weight-shared encoder for both modalities; separate cross-attention for each.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>Results</h2>
+      <div class="headline">
+        <div class="hl">
+          <div class="bench">ActivityNet Captions · CIDEr</div>
+          <div class="line"><span class="bk">Without → with memory retrieval</span><span class="from">31.24 →</span><span class="to">33.01</span><span class="gain">+1.77</span></div>
+        </div>
+        <div class="hl">
+          <div class="bench">YouCook2 · CIDEr</div>
+          <div class="line"><span class="bk">Without → with memory retrieval</span><span class="from">23.67 →</span><span class="to">31.66</span><span class="gain">+7.99</span></div>
+        </div>
+      </div>
+
+      <div class="tbl-head"><h3>Event captioning, ActivityNet Captions</h3></div>
+      <div class="tables-wrap">
+        <table class="res">
+          <thead><tr><th>Method</th><th>Backbone</th><th class="c">#PT videos</th><th>CIDEr</th><th>METEOR</th><th>BLEU4</th><th>SODA_c</th></tr></thead>
+          <tbody>
+            <tr><td>Vid2Seq</td><td>CLIP</td><td class="c">15M</td><td><u>30.10</u></td><td><u>8.50</u></td><td>–</td><td>5.80</td></tr>
+            <tr class="sep"><td>MT</td><td>TSN</td><td class="c">–</td><td>6.10</td><td>3.20</td><td>0.30</td><td>–</td></tr>
+            <tr><td>ECHR</td><td>C3D</td><td class="c">–</td><td>14.70</td><td>7.20</td><td>1.82</td><td>3.20</td></tr>
+            <tr><td>UEDVC</td><td>C3D</td><td class="c">–</td><td>–</td><td>–</td><td>–</td><td>5.5</td></tr>
+            <tr><td>PDVC<sup>†</sup></td><td>CLIP</td><td class="c">–</td><td>29.97</td><td>8.06</td><td><u>2.21</u></td><td><u>5.92</u></td></tr>
+            <tr class="ours"><td>CM² (ours)</td><td>CLIP</td><td class="c">–</td><td><b>33.01</b></td><td><b>8.55</b></td><td><b>2.38</b></td><td><b>6.18</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-head"><h3>Event captioning, YouCook2</h3></div>
+      <div class="tables-wrap">
+        <table class="res">
+          <thead><tr><th>Method</th><th>Backbone</th><th class="c">#PT videos</th><th>CIDEr</th><th>METEOR</th><th>BLEU4</th><th>SODA_c</th></tr></thead>
+          <tbody>
+            <tr><td>Vid2Seq</td><td>CLIP</td><td class="c">1M</td><td><b>47.10</b></td><td><b>9.30</b></td><td>–</td><td><b>7.90</b></td></tr>
+            <tr class="sep"><td>MT</td><td>TSN</td><td class="c">–</td><td>9.30</td><td>5.00</td><td>1.15</td><td>–</td></tr>
+            <tr><td>ECHR</td><td>C3D</td><td class="c">–</td><td>–</td><td>3.82</td><td>–</td><td>–</td></tr>
+            <tr><td>E2ESG</td><td>C3D</td><td class="c">–</td><td>25.00</td><td>3.50</td><td>–</td><td>–</td></tr>
+            <tr><td>PDVC<sup>†</sup></td><td>CLIP</td><td class="c">–</td><td>29.69</td><td>5.56</td><td>1.40</td><td>4.92</td></tr>
+            <tr class="ours"><td>CM² (ours)</td><td>CLIP</td><td class="c">–</td><td><u>31.66</u></td><td><u>6.08</u></td><td><b>1.63</b></td><td><u>5.34</u></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-head"><h3>Event localization</h3></div>
+      <div class="tables-wrap">
+        <table class="res">
+          <thead>
+            <tr><th rowspan="2">Method</th><th rowspan="2" class="c">PT</th><th class="grp" colspan="3">ActivityNet Captions</th><th class="grp" colspan="3">YouCook2</th></tr>
+            <tr><th>F1</th><th>Recall</th><th>Precision</th><th>F1</th><th>Recall</th><th>Precision</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Vid2Seq</td><td class="c ck">✓</td><td>53.29</td><td>52.70</td><td>53.90</td><td><u>27.84</u></td><td><b>27.90</b></td><td>27.80</td></tr>
+            <tr class="sep"><td>PDVC<sup>†</sup></td><td class="c x">✗</td><td><u>54.78</u></td><td><u>53.27</u></td><td><u>56.38</u></td><td>26.81</td><td>22.89</td><td><u>32.37</u></td></tr>
+            <tr class="ours"><td>CM² (ours)</td><td class="c x">✗</td><td><b>55.21</b></td><td><b>53.71</b></td><td><b>56.81</b></td><td><b>28.43</b></td><td><u>24.76</u></td><td><b>33.38</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note"><b>Bold</b> and <u>underline</u> mark the best and second best, as in the paper. <sup>†</sup>Reproduced from the official implementation. #PT videos: extra videos used for pretraining. All methods in the localization table use CLIP features.</p>
+
+      <div class="cards">
+        <div class="card" style="grid-column: 1 / -1;">
+          <h4>How much a good memory could add</h4>
+          <p class="take">If retrieval were perfect (querying the memory with the ground-truth captions and placing the results on ground-truth segments), YouCook2 CIDEr would reach <b>183.95</b>. CM²'s real retrieval is a first step toward that ceiling.</p>
+          <div class="hbars" id="headroom"></div>
+          <div class="src">YouCook2 CIDEr. Oracle rows use the retrieved captions directly as output, without the model.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== HiCM² ===================== -->
+  <div class="panel" id="panel-hicm2" role="tabpanel" aria-labelledby="tab-hicm2" hidden>
+    <div class="wrap paper-head">
+      <h2 class="ptitle">HiCM²: Hierarchical Compact Memory Modeling for Dense Video Captioning</h2>
+      <div class="pvenue">AAAI 2025</div>
+      <div class="btn-row">
+        <a class="btn" href="https://arxiv.org/abs/2412.14585">📄 Paper</a>
+        <a class="btn ghost" href="https://github.com/ailab-kyunghee/HiCM2-DVC">💻 Code</a>
+      </div>
+    </div>
+
+    <section class="wrap">
+      <h2>Overview</h2>
+      <div class="prose">
+        <p>People rarely recall a memory flatly. We sense the gist first, then the kind of thing it was, then the specific episode. HiCM² builds the captioning memory the same way. Training captions are clustered bottom-up into levels, and an LLM summarizes each cluster into one compact sentence, so higher levels hold more abstract knowledge. At inference, retrieval runs top-down: it picks relevant abstract entries first and follows them to finer ones.</p>
+        <p>On YouCook2 the memory has four levels with 1,758, 313, 68, and 8 entries, built from 10,337 captions. HiCM² reaches <b>71.84 CIDEr</b> on YouCook2 and <b>51.29</b> on ViTT, the best among methods that use pretraining.</p>
+      </div>
+      <figure>
+        <img src="static/images/hicm2/concept.jpg" alt="HiCM² concept: humans recall from memory at different levels of abstraction; the model retrieves from a hierarchical compact memory in the same way.">
+        <figcaption><b>Memory in layers.</b> Like human recall, the model reaches abstract concepts first and specific episodes last.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap">
+      <h2>See it in action</h2>
+      <div class="explorer" id="demo-hicm2"></div>
+    </section>
+
+    <section class="wrap">
+      <h2>Method</h2>
+      <figure>
+        <img src="static/images/hicm2/overall.jpg" alt="HiCM² overall architecture: video-to-text retrieval at each hierarchical level, a temporal encoder, speech and time tokens, and a text decoder that outputs start time, end time, and caption.">
+        <figcaption><b>Overall architecture.</b> Retrieval runs at every level of the memory; the retrieved sentences, visual features, and speech are fed to a text decoder that writes each event as start time, end time, and caption.</figcaption>
+      </figure>
+      <div class="fig-pair">
+        <figure>
+          <img src="static/images/hicm2/construction.jpg" alt="Hierarchical memory construction: captions are clustered at low, middle, and high levels; an LLM summarizes each cluster; a text encoder stores the summaries as memory.">
+          <figcaption><b>Building the memory, bottom-up.</b> Cluster, summarize each cluster with an LLM, encode, repeat.</figcaption>
+        </figure>
+        <figure>
+          <img src="static/images/hicm2/read.jpg" alt="Hierarchical memory read: top-k selection at the high level, then hierarchy tracking down to the middle and low levels.">
+          <figcaption><b>Reading it, top-down.</b> Select at the top, then follow the hierarchy down.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>Results</h2>
+      <div class="headline">
+        <div class="hl">
+          <div class="bench">YouCook2 · CIDEr</div>
+          <div class="line"><span class="bk">Vid2Seq<sup>†</sup> → HiCM²</span><span class="from">66.29 →</span><span class="to">71.84</span><span class="gain">+5.55</span></div>
+        </div>
+        <div class="hl">
+          <div class="bench">ViTT · CIDEr</div>
+          <div class="line"><span class="bk">Vid2Seq<sup>†</sup> → HiCM²</span><span class="from">48.84 →</span><span class="to">51.29</span><span class="gain">+2.45</span></div>
+        </div>
+      </div>
+
+      <div class="tbl-head"><h3>Event captioning</h3></div>
+      <div class="tables-wrap">
+        <table class="res" style="min-width:760px">
+          <thead>
+            <tr><th rowspan="2">Method</th><th rowspan="2" class="c">PT</th><th class="grp" colspan="4">YouCook2 (val)</th><th class="grp" colspan="4">ViTT (test)</th></tr>
+            <tr><th>CIDEr</th><th>METEOR</th><th>SODA_c</th><th>BLEU4</th><th>CIDEr</th><th>METEOR</th><th>SODA_c</th><th>BLEU4</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PDVC</td><td class="c x">✗</td><td>29.69</td><td>5.56</td><td>4.92</td><td>1.40</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>CM²</td><td class="c x">✗</td><td>31.66</td><td>6.08</td><td>5.34</td><td>1.63</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr class="sep"><td>Streaming V2S</td><td class="c ck">✓</td><td>32.90</td><td>7.10</td><td>6.00</td><td>–</td><td>25.2</td><td>5.80</td><td>10.00</td><td>–</td></tr>
+            <tr><td>DIBS</td><td class="c ck">✓</td><td>44.44</td><td>7.51</td><td>6.39</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Vid2Seq<sup>†</sup></td><td class="c ck">✓</td><td><u>66.29</u></td><td><u>12.41</u></td><td><u>9.87</u></td><td><u>5.64</u></td><td><u>48.84</u></td><td><u>9.51</u></td><td><u>14.99</u></td><td><u>0.71</u></td></tr>
+            <tr class="ours"><td>HiCM² (ours)</td><td class="c ck">✓</td><td><b>71.84</b></td><td><b>12.80</b></td><td><b>10.73</b></td><td><b>6.11</b></td><td><b>51.29</b></td><td><b>9.66</b></td><td><b>15.07</b></td><td><b>0.86</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-head"><h3>Event localization</h3></div>
+      <div class="tables-wrap">
+        <table class="res">
+          <thead>
+            <tr><th rowspan="2">Method</th><th rowspan="2" class="c">PT</th><th class="grp" colspan="3">YouCook2 (val)</th><th class="grp" colspan="3">ViTT (test)</th></tr>
+            <tr><th>F1</th><th>Recall</th><th>Precision</th><th>F1</th><th>Recall</th><th>Precision</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PDVC</td><td class="c x">✗</td><td>26.81</td><td>22.89</td><td>32.37</td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>CM²</td><td class="c x">✗</td><td>28.43</td><td>24.76</td><td><u>33.38</u></td><td>–</td><td>–</td><td>–</td></tr>
+            <tr class="sep"><td>Streaming V2S</td><td class="c ck">✓</td><td>24.10</td><td>–</td><td>–</td><td>35.40</td><td>–</td><td>–</td></tr>
+            <tr><td>DIBS</td><td class="c ck">✓</td><td><u>31.43</u></td><td>26.24</td><td><b>39.81</b></td><td>–</td><td>–</td><td>–</td></tr>
+            <tr><td>Vid2Seq<sup>†</sup></td><td class="c ck">✓</td><td>31.08</td><td><u>30.38</u></td><td>31.81</td><td><b>46.21</b></td><td><b>45.89</b></td><td><u>46.53</u></td></tr>
+            <tr class="ours"><td>HiCM² (ours)</td><td class="c ck">✓</td><td><b>32.51</b></td><td><b>32.51</b></td><td>32.51</td><td><u>45.98</u></td><td><u>45.00</u></td><td><b>47.00</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note"><b>Bold</b> and <u>underline</u> mark the best and second best, as in the paper. PT: pretraining on additional video datasets. <sup>†</sup>Reproduced from the official implementation. All methods use a CLIP backbone.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Summaries beat raw captions</h4>
+          <p class="take">A flat memory of all training captions helps a little. Clustering them into a hierarchy is about the same. Writing each cluster as an LLM summary is what lifts CIDEr to <b>71.84</b>.</p>
+          <div class="scroll">
+            <table class="mini">
+              <thead><tr><th>Memory</th><th class="c">Hierarchy</th><th>CIDEr</th><th>METEOR</th><th>SODA_c</th><th>F1</th></tr></thead>
+              <tbody>
+                <tr class="base"><td>No memory</td><td class="c">✗</td><td>66.29</td><td>12.41</td><td>9.87</td><td>31.08</td></tr>
+                <tr><td>All training captions</td><td class="c">✗</td><td>67.90</td><td>12.49</td><td>10.38</td><td>32.31</td></tr>
+                <tr><td>Clustering</td><td class="c">✓</td><td>67.15</td><td><b>12.97</b></td><td>10.17</td><td>32.30</td></tr>
+                <tr class="ours"><td>Clustering + LLM</td><td class="c">✓</td><td><b>71.84</b></td><td>12.80</td><td><b>10.73</b></td><td><b>32.51</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="src">YouCook2.</div>
+        </div>
+        <div class="card">
+          <h4>Every level pulls its weight</h4>
+          <p class="take">Any single level helps over no memory, and using all three gives the best captions (<b>71.84</b> CIDEr).</p>
+          <div class="scroll">
+            <table class="mini">
+              <thead><tr><th class="c">High</th><th class="c">Mid</th><th class="c">Low</th><th>CIDEr</th><th>METEOR</th><th>SODA_c</th><th>F1</th></tr></thead>
+              <tbody>
+                <tr class="base"><td class="c"></td><td class="c"></td><td class="c"></td><td>66.29</td><td>12.41</td><td>9.87</td><td>31.08</td></tr>
+                <tr><td class="c"></td><td class="c"></td><td class="c">✓</td><td>67.75</td><td>12.33</td><td>10.35</td><td>32.27</td></tr>
+                <tr><td class="c"></td><td class="c">✓</td><td class="c"></td><td>67.59</td><td>12.45</td><td>10.37</td><td>32.23</td></tr>
+                <tr><td class="c">✓</td><td class="c"></td><td class="c"></td><td>67.21</td><td>12.21</td><td>10.28</td><td>31.98</td></tr>
+                <tr><td class="c"></td><td class="c">✓</td><td class="c">✓</td><td>68.61</td><td>12.35</td><td>10.51</td><td>32.07</td></tr>
+                <tr><td class="c">✓</td><td class="c"></td><td class="c">✓</td><td>69.81</td><td>12.63</td><td>10.54</td><td><b>33.00</b></td></tr>
+                <tr><td class="c">✓</td><td class="c">✓</td><td class="c"></td><td>68.05</td><td>12.33</td><td>10.41</td><td>32.87</td></tr>
+                <tr class="ours"><td class="c">✓</td><td class="c">✓</td><td class="c">✓</td><td><b>71.84</b></td><td><b>12.80</b></td><td><b>10.73</b></td><td>32.51</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="src">YouCook2. High is level 4, Mid covers levels 2 and 3, Low is level 1.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="bibtex" class="wrap">
+    <h2>BibTeX</h2>
+    <div class="bibs">
+      <div class="bib">
+        <div class="bk">CM² · CVPR 2024</div>
+        <button class="copy-btn" type="button" data-copy="bib-cm2">Copy</button>
+<pre id="bib-cm2">@inproceedings{kim2024you,
+  title     = {Do You Remember? Dense Video Captioning with
+               Cross-Modal Memory Retrieval},
+  author    = {Kim, Minkuk and Kim, Hyeon Bae and Moon, Jinyoung
+               and Choi, Jinwoo and Kim, Seong Tae},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer
+               Vision and Pattern Recognition (CVPR)},
+  pages     = {13894--13904},
+  year      = {2024}
+}</pre>
+      </div>
+      <div class="bib">
+        <div class="bk">HiCM² · AAAI 2025</div>
+        <button class="copy-btn" type="button" data-copy="bib-hicm2">Copy</button>
+<pre id="bib-hicm2">@inproceedings{kim2025hicm2,
+  title     = {HiCM$^2$: Hierarchical Compact Memory Modeling for
+               Dense Video Captioning},
+  author    = {Kim, Minkuk and Kim, Hyeon Bae and Moon, Jinyoung
+               and Choi, Jinwoo and Kim, Seong Tae},
+  booktitle = {Proceedings of the AAAI Conference on Artificial
+               Intelligence (AAAI)},
+  year      = {2025}
+}</pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="insts">
+      <a class="inst khu" href="https://github.com/ailab-kyunghee" style="text-decoration:none"><i class="dot"></i>Augmented Intelligence Lab, Kyung Hee University</a>
+      <span class="inst etri"><i class="dot"></i>ETRI</span>
+    </div>
+    <p>Supported in part by IITP grants funded by the Korea Government (MSIT) (2020-0-00004, 2022-0-00078, IITP-2024-RS-2023-00258649, 2021-0-02068, RS-2022-00155911), by NRF grants funded by the Korea Government (MSIT) (2021R1G1A1094990, RS-2024-00334321), and by the CARAI grant funded by DAPA and ADD (UD230017TD).</p>
+    <p><a href="https://geppa.github.io/projects/">More projects by Minkuk Kim</a></p>
+  </div>
+</footer>
+
+<script>
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- series card: flat memory dots ---------- */
+  (function () {
+    var hits = { 9: 1, 33: 1, 34: 1, 58: 1, 81: 1 };
+    var h = '';
+    for (var i = 0; i < 96; i++) h += '<i' + (hits[i] ? ' class="hit"' : '') + '></i>';
+    $('flatDots').innerHTML = h;
+  })();
+
+  /* ---------- paper tabs (hash: #cm2 / #hicm2) ---------- */
+  function showPaper(id, scroll) {
+    ['cm2', 'hicm2'].forEach(function (p) {
+      var on = p === id;
+      $('panel-' + p).hidden = !on;
+      $('tab-' + p).classList.toggle('active', on);
+      $('tab-' + p).setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (scroll) $('papers').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.querySelectorAll('[data-go]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = el.dataset.go;
+      history.replaceState(null, '', '#' + id);
+      showPaper(id, true);
+    });
+  });
+  function fromHash() {
+    var h = location.hash.replace('#', '');
+    if (h === 'cm2' || h === 'hicm2') { showPaper(h, false); setTimeout(function () { $('papers').scrollIntoView({ block: 'start' }); }, 30); }
+    else showPaper('cm2', false);
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+
+  /* ---------- demos ----------
+     frames: the 7 frames of the paper's qualitative figure, in order.
+     on: frames each segment roughly covers (approximate, read off the figure). */
+  var DEMOS = {
+    cm2: {
+      dir: 'static/images/cases/cm2/', mode: 'flat',
+      source: 'ActivityNet Captions validation set, from the paper’s qualitative figure.',
+      segs: [
+        { label: 'Routine', on: [1, 2, 3, 4],
+          mem: ['A male gymnast hops up onto bars and begins performing a gymnastics routine.'],
+          ours: 'He does a gymnastics routine on the bars.', gt: 'He does a gymnastics routine on the balance beam.' },
+        { label: 'Dismount', on: [5, 6],
+          mem: ['The video ends as he performs a final flip and hops off the beam.'],
+          ours: 'He dismounts and lands on the mat.', gt: 'He dismounts and lands on a mat.' },
+        { label: 'After', on: [7],
+          mem: ['Several other male gymnasts walk around in the background.'],
+          ours: 'He walks away and the crowd cheers.', gt: 'The coach runs up to the athlete.' }
+      ]
+    },
+    hicm2: {
+      dir: 'static/images/cases/hicm2/', mode: 'hier',
+      source: 'YouCook2 validation set, from the paper’s qualitative figure.',
+      segs: [
+        { label: 'Bacon', on: [2, 3],
+          mem: ['Bacon and pancetta are cooked in various ways.', 'Cook bacon in a pan with optional ingredients until.', 'Fry bacon in a pan, optionally with oil, to cook it.'],
+          ours: 'Fry the bacon in a pan.', gt: 'Heat butter in a pan and cook bacon in it.' },
+        { label: 'Tomato', on: [4, 5],
+          mem: ['Tomatoes are cooked in various methods.', 'Tomatoes, with other ingredients, are added to a pan.', 'Add tomato puree to the pot or pan and stir.'],
+          ours: 'Add tomato puree to the pan and stir.', gt: 'Add tomato puree to the pan.' },
+        { label: 'Pasta', on: [6, 7],
+          mem: ['Ingredients are prepared, combined.', 'Cook and prepare noodles, combine with ingredients.', 'Combine cooked pasta with sauce, garnish with ingredients.'],
+          ours: 'Add the pasta to the sauce and mix.', gt: 'Add boiled pasta cheese to the pan.' }
+      ]
+    }
+  };
+
+  function renderDemo(key, idx) {
+    var d = DEMOS[key], s = d.segs[idx], el = $('demo-' + key);
+    var tabs = '<div class="seg-tabs"><span class="lbl">Event</span>' + d.segs.map(function (g, i) {
+      return '<button class="stab' + (i === idx ? ' active' : '') + '" type="button" data-i="' + i + '">' + (i + 1) + '. ' + g.label + '</button>';
+    }).join('') + '</div>';
+    var strip = '<div class="strip">';
+    for (var f = 1; f <= 7; f++) {
+      var on = s.on.indexOf(f) >= 0;
+      strip += '<div class="fr ' + (on ? 'on' : 'off') + '"><img src="' + d.dir + 't' + f + '.jpg" alt="frame ' + f + '" loading="lazy"></div>';
+    }
+    strip += '</div><div class="strip-note">Highlighted frames show roughly where this event is.</div>';
+    var recall;
+    if (d.mode === 'flat') {
+      recall = '<div class="recall"><div class="rk">Recalled from memory</div>' +
+        '<div class="mem flat"><span class="lvl">Nearest</span><span class="txt">' + s.mem[0] + '</span></div></div>';
+    } else {
+      var names = ['High', 'Middle', 'Low'];
+      recall = '<div class="recall hier"><div class="rk">Recalled from memory, top-down</div>' + s.mem.map(function (t, i) {
+        return '<div class="mem"><span class="lvl">' + names[i] + '</span><span class="txt">' + t + '</span></div>';
+      }).join('') + '</div>';
+    }
+    var out = '<div class="outcome"><div class="oc ours"><div class="ok">' + (key === 'cm2' ? 'CM²' : 'HiCM²') + ' caption</div><div class="ot">' + s.ours + '</div></div>' +
+      '<div class="oc"><div class="ok">Ground truth</div><div class="ot">' + s.gt + '</div></div></div>';
+    el.innerHTML = tabs + strip + recall + out + '<div class="demo-note">' + d.source + '</div>';
+    el.querySelectorAll('.stab').forEach(function (b) {
+      b.addEventListener('click', function () { renderDemo(key, +b.dataset.i); });
+    });
+  }
+  renderDemo('cm2', 0);
+  renderDemo('hicm2', 0);
+
+  /* ---------- CM² headroom bars (YouCook2 CIDEr) ---------- */
+  (function () {
+    var rows = [
+      ['No retrieval', 23.67, ''],
+      ['CM² retrieval', 31.66, 'ours'],
+      ['Oracle, predicted segments', 53.55, 'oracle'],
+      ['Oracle, ground-truth segments', 183.95, 'oracle']
+    ];
+    var max = 200;
+    $('headroom').innerHTML = rows.map(function (r) {
+      return '<div class="hb ' + r[2] + '" title="' + r[0] + ': ' + r[1].toFixed(2) + '"><span class="nm">' + r[0] + '</span>' +
+        '<span class="track"><span class="fill" style="display:block;width:' + (r[1] / max * 100).toFixed(1) + '%"></span>' +
+        '<span class="val" style="left:' + (r[1] / max * 100).toFixed(1) + '%">' + r[1].toFixed(2) + '</span></span></div>';
+    }).join('');
+  })();
+
+  /* ---------- copy BibTeX ---------- */
+  document.querySelectorAll('.copy-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var txt = $(b.dataset.copy).textContent;
+      function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, fallback); else fallback();
+      function fallback() { var ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) {} document.body.removeChild(ta); }
+    });
+  });
+</script>
+</body>
+</html>
