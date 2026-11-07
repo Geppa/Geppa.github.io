@@ -283,3 +283,39 @@ footer .insts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8p
   .inst.etri .long { display: none; }
   .dots { grid-template-columns: repeat(18, 1fr); }
 }
+
+/* next chapter: a quiet hand-off at the end of Chapter I */
+.next-ch {
+  display: block; position: relative; max-width: 940px; margin: 56px auto 0; padding: 30px 32px;
+  text-align: center; text-decoration: none; color: var(--ink);
+  border-top: 1px solid var(--line); border-radius: 0 0 var(--radius) var(--radius);
+  transition: background-color .4s ease;
+}
+.next-ch:hover { background: #f3f2ed; }
+.nc-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--khu); }
+.nc-title { display: block; margin-top: 8px; font-family: "Spectral", Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15; }
+.nc-num { background: var(--duo); -webkit-background-clip: text; background-clip: text; color: transparent; margin-right: 8px; font-weight: 500; }
+.nc-sub { display: block; margin-top: 6px; font-size: 15px; color: var(--soft); }
+.nc-go { display: block; margin-top: 10px; font-size: 20px; color: var(--faint); transition: transform .4s var(--ease), color .3s ease; }
+.next-ch:hover .nc-go { transform: translateY(4px); color: var(--khu); }
+
+/* side table of contents: wide screens only */
+.toc {
+  position: fixed; top: 120px; left: max(24px, calc(50% - 500px - 196px)); width: 160px; z-index: 5;
+  display: none; flex-direction: column; gap: 14px; font-size: 13px;
+  opacity: 0; transform: translateX(-6px); transition: opacity .4s ease, transform .4s var(--ease); pointer-events: none;
+}
+.toc.show { opacity: 1; transform: none; pointer-events: auto; }
+.toc a { display: block; color: var(--faint); text-decoration: none; line-height: 1.35; transition: color .25s ease; }
+.toc a:hover { color: var(--ink); }
+.toc-top { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.toc-ch { display: flex; flex-direction: column; gap: 6px; padding-left: 14px; border-left: 1px solid var(--line); position: relative; }
+.toc-ch > a:not(.toc-chap) { padding-left: 2px; position: relative; }
+.toc-chap { font-family: "Spectral", Georgia, serif; font-size: 18px; font-weight: 600; color: var(--soft) !important; margin-bottom: 2px; }
+.toc-chap .tn { font-weight: 500; margin-right: 8px; color: var(--faint); }
+.toc-chap.in { color: var(--ink) !important; }
+.toc-chap.in .tn { background: var(--duo); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.toc a.active:not(.toc-chap) { color: var(--ink); font-weight: 600; }
+.toc-ch > a.active:not(.toc-chap)::before { content: ""; position: absolute; left: -16px; top: 2px; bottom: 2px; width: 2px; background: var(--khu); border-radius: 2px; }
+.toc-top.active { color: var(--ink); }
+@media (min-width: 1380px) { .toc { display: flex; } }

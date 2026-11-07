@@ -56,6 +56,20 @@
   </div>
 </header>
 
+
+<aside class="toc" id="toc" aria-label="On this page">
+  <a class="toc-top" href="#series">The series</a>
+  <div class="toc-ch">
+    <a class="toc-chap" href="#cm2"><span class="tn">I</span>CM²</a>
+    <a href="#cm2-overview">Overview</a><a href="#cm2-demo">Demo</a><a href="#cm2-method">Method</a><a href="#cm2-results">Results</a>
+  </div>
+  <div class="toc-ch">
+    <a class="toc-chap" href="#hicm2"><span class="tn">II</span>HiCM²</a>
+    <a href="#hicm2-overview">Overview</a><a href="#hicm2-demo">Demo</a><a href="#hicm2-method">Method</a><a href="#hicm2-results">Results</a>
+  </div>
+  <a class="toc-top" href="#bibtex">BibTeX</a>
+</aside>
+
 <main>
   <section id="series" class="wrap">
     <h2>From a flat memory to a hierarchy</h2>
@@ -104,7 +118,7 @@
       </div>
     </div>
 
-    <section class="wrap">
+    <section class="wrap" id="cm2-overview">
       <h2>Overview</h2>
       <div class="prose">
         <p>CM² stores the training captions as an external memory. The input video is split into segment-level temporal anchors, and each anchor retrieves its most similar sentences through video-to-text matching. A versatile encoder processes the visual features and the retrieved text with shared weights, and the decoder reads them through separate visual and textual cross-attention to predict event boundaries and captions.</p>
@@ -116,12 +130,12 @@
       </figure>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="cm2-demo">
       <h2>See it in action</h2>
       <div class="explorer" id="demo-cm2"></div>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="cm2-method">
       <h2>Method</h2>
       <figure>
         <img src="static/images/cm2/overall.jpg" alt="CM² overall architecture: a frozen CLIP image encoder, memory retrieval with temporal anchors, a versatile transformer encoder, and a decoder with visual and textual cross-attention that outputs start time, end time, and caption.">
@@ -139,7 +153,7 @@
       </div>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="cm2-results">
       <h2>Results</h2>
       <div class="headline">
         <div class="hl">
@@ -207,6 +221,15 @@
         </div>
       </div>
     </section>
+
+    <div class="wrap">
+      <a class="next-ch" href="#hicm2">
+        <span class="nc-label">Next chapter</span>
+        <span class="nc-title"><span class="nc-num">II</span> HiCM²</span>
+        <span class="nc-sub">From a flat memory to a hierarchy of compact summaries.</span>
+        <span class="nc-go" aria-hidden="true">↓</span>
+      </a>
+    </div>
   </article>
 
   <!-- ===================== HiCM² ===================== -->
@@ -222,7 +245,7 @@
       </div>
     </div>
 
-    <section class="wrap">
+    <section class="wrap" id="hicm2-overview">
       <h2>Overview</h2>
       <div class="prose">
         <p>People rarely recall a memory flatly. We sense the gist first, then the kind of thing it was, then the specific episode. HiCM² builds the captioning memory the same way. Training captions are clustered bottom-up into levels, and an LLM summarizes each cluster into one compact sentence, so higher levels hold more abstract knowledge. At inference, retrieval runs top-down: it picks relevant abstract entries first and follows them to finer ones.</p>
@@ -234,12 +257,12 @@
       </figure>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="hicm2-demo">
       <h2>See it in action</h2>
       <div class="explorer" id="demo-hicm2"></div>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="hicm2-method">
       <h2>Method</h2>
       <figure>
         <img src="static/images/hicm2/overall.jpg" alt="HiCM² overall architecture: video-to-text retrieval at each hierarchical level, a temporal encoder, speech and time tokens, and a text decoder that outputs start time, end time, and caption.">
@@ -257,7 +280,7 @@
       </div>
     </section>
 
-    <section class="wrap">
+    <section class="wrap" id="hicm2-results">
       <h2>Results</h2>
       <div class="headline">
         <div class="hl">
@@ -404,18 +427,32 @@
     $('flatDots').innerHTML = h;
   })();
 
-  /* ---------- chapters: scroll-spy in the nav + reading progress ---------- */
+  /* ---------- reading position: nav chapter, side table of contents, progress line ---------- */
   (function () {
-    var links = {};
-    document.querySelectorAll('[data-spy]').forEach(function (a) { links[a.dataset.spy] = a; });
-    var chapters = ['cm2', 'hicm2'].map(function (id) { return $(id); });
-    var bar = $('progressBar');
+    var nav = {};
+    document.querySelectorAll('[data-spy]').forEach(function (a) { nav[a.dataset.spy] = a; });
+    var toc = $('toc');
+    var tocLinks = [].slice.call(toc.querySelectorAll('a'));
+    var targets = tocLinks.map(function (a) { return $(a.getAttribute('href').slice(1)); });
+    var series = $('series'), bar = $('progressBar');
     function update() {
-      var y = window.scrollY + window.innerHeight * 0.35, cur = null;
-      chapters.forEach(function (c) { if (c.offsetTop <= y) cur = c.id; });
-      var bib = $('bibtex');
-      if (bib && bib.offsetTop <= y) cur = null;
-      Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === cur); });
+      var probe = window.scrollY + window.innerHeight * 0.35;
+      // nav: which chapter
+      var chap = null;
+      ['cm2', 'hicm2'].forEach(function (id) { if ($(id).offsetTop <= probe) chap = id; });
+      if ($('bibtex').offsetTop <= probe) chap = null;
+      Object.keys(nav).forEach(function (k) { nav[k].classList.toggle('active', k === chap); });
+      // toc: deepest target above the probe
+      var cur = -1;
+      targets.forEach(function (t, i) { if (t && t.offsetTop <= probe) cur = i; });
+      tocLinks.forEach(function (a, i) { a.classList.toggle('active', i === cur); });
+      tocLinks.forEach(function (a) {
+        if (a.classList.contains('toc-chap')) {
+          var id = a.getAttribute('href').slice(1);
+          a.classList.toggle('in', id === chap);
+        }
+      });
+      toc.classList.toggle('show', window.scrollY + 80 >= series.offsetTop);
       var max = document.documentElement.scrollHeight - window.innerHeight;
       bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
     }
