@@ -202,6 +202,7 @@ main { padding-top: 64px; padding-bottom: 64px; }
 }
 .pub-legend sup { font-size: 10px; line-height: 0; }
 .pub-venue { margin-top: 4px; font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 1.5; color: var(--mute); }
+.pub-venue b { font-weight: 600; color: var(--accent); }
 .pub-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .pub-links a { letter-spacing: .14em; }
 .pub-links .soon { color: var(--mute-2); letter-spacing: .14em; }

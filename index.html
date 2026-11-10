@@ -44,7 +44,7 @@ tab: bio
       <div class="pub-body">
         <h3 class="pub-title">{% if first_url != "" %}<a href="{{ first_url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
         <p class="pub-authors">{% for a in pub.authors %}{% assign name = a | remove: "*" | remove: "†" | strip %}{% assign mark = a | replace: name, "" | strip %}{% if name == p.me %}<span class="me">{{ name }}</span>{% else %}{{ name }}{% endif %}{% if mark != "" %}<sup class="mark">{{ mark }}</sup>{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
-        <p class="pub-venue">{{ pub.venue }}</p>
+        {% assign vhead = pub.venue | split: "(" | first %}{% assign vtail = pub.venue | remove_first: vhead %}<p class="pub-venue">{% if vtail != "" %}{{ vhead }}<b>{{ vtail }}</b>{% else %}{{ pub.venue }}{% endif %}</p>
         {% if pub.blurb and pub.blurb != "" %}<p class="pub-blurb">{{ pub.blurb }}</p>{% endif %}
         <p class="pub-links">{% for l in pub.links %}{% if l.url and l.url != "" %}<a class="ul" href="{{ l.url }}">{{ l.label }}</a>{% else %}<span class="soon">{{ l.label }} (soon)</span>{% endif %}{% endfor %}</p>
       </div>
