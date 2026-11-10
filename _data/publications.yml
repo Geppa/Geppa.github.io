@@ -21,6 +21,7 @@
   venue: Neural Information Processing Systems (NeurIPS), 2026
   links:
     - {label: Paper, url: "https://geppa.github.io/TimeTraveler/static/pdf/TimeTraveler_NeurIPS2026.pdf"}
+    - {label: arXiv, url: "https://arxiv.org/abs/2611.10337"}
     - {label: Code, url: "https://github.com/KHU-AMI/TimeTraveler"}
     - {label: Project page, url: "https://geppa.github.io/TimeTraveler"}
   figures:
